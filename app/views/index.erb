@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Welcome to Twitter!</h1>
+  <ul>
+  <% @user.tweets.each do |tweet| %>
+    <li> <%= tweet.text %></li>
+    <% end %>
+  </ul>
+</div>
