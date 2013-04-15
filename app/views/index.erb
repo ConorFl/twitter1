@@ -1,8 +1,16 @@
-<div class="container">
-  <h1>Welcome to Twitter!</h1>
-  <ul>
-  <% @user.tweets.each do |tweet| %>
-    <li> <%= tweet.text %></li>
-    <% end %>
-  </ul>
+<div class="container tweets">
+  <% if @tweets %>
+    <%= erb :display_partial %>
+  <% elsif @user %>
+    <%= erb :render, :layout => false %>
+  <% end %>
 </div>
+
+<script type="text/javascript">
+  $('#username_form').on('submit', function(event){
+    event.preventDefault();
+    $.get("/refresh/" + $("#username").val(), function(e){
+      $('.tweets').html(e);
+    }); 
+  });
+</script>

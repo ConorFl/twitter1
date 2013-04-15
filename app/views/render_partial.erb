@@ -1,0 +1,14 @@
+<div class='render'>
+  <img src='images/ajax-loader.gif' />
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $.ajax({
+    url: "/"+'<%= @user.name %>',
+    type: "post"
+  }).done(function(e){
+    $('.render').replaceWith(e);
+  });
+});
+</script>

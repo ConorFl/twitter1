@@ -7,3 +7,7 @@
 th {
   text-align: left;
 }
+.render {
+  margin: 300px auto;
+  width: 50px;
+}
