@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
   <!-- 
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -18,13 +19,12 @@
   <title></title>
 </head>
 <body>
-  <div class="container">
-  <br>
-  <form id="username_form">
-    @<input type="text" id='username' placeholder="username">
-    <input type="submit" value="Show Tweets!">
-  </form>
-</div>
+  <div class="new_user">
+    <form id="username_form">
+      @<input type="text" id='username' placeholder="username">
+      <input type="submit" name="show_tweets" value="Show Tweets!">
+    </form>
+  </div>
   <%= yield %>
 </body>
 </html>

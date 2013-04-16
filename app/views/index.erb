@@ -3,14 +3,17 @@
     <%= erb :display_partial %>
   <% elsif @user %>
     <%= erb :render, :layout => false %>
+  <% else %>
+    TweetTweet...TweetTweet...TweetTweet...
   <% end %>
 </div>
 
 <script type="text/javascript">
-  $('#username_form').on('submit', function(event){
-    event.preventDefault();
-    $.get("/refresh/" + $("#username").val(), function(e){
-      $('.tweets').html(e);
-    }); 
-  });
+$('#username_form').on('submit', function(event){
+  event.preventDefault();
+  $.get("/refresh/" + $("#username").val(), function(e){
+    $('.container').text('');
+    $('.tweets').html(e);
+  }); 
+});
 </script>
